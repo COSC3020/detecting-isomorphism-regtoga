@@ -67,6 +67,37 @@ const graphG =
     [1, 0, 1, 0, 0]  //E, 4
 ] //[0, 1, 2, 3, 4]
 
+const graphN1 =
+[ //[0, 1, 2, 3]
+    [0, 1, 0, 0], //A, 0
+    [1, 0, 0, 0], //B, 1
+    [0, 0, 0, 1], //C, 2
+    [0, 0, 1, 0], //D, 3
+] //[0, 1, 2, 3]
+
+const graphN2 =
+[ //[0, 1, 2, 3]
+    [0, 0, 1, 0], //A, 0
+    [0, 0, 0, 1], //B, 1
+    [1, 0, 0, 0], //C, 2
+    [0, 1, 0, 0], //D, 3
+] //[0, 1, 2, 3]
+
+const graphH =
+[ //[0, 1, 2, 3]
+    [0, 0, 0, 0], //A, 0
+    [0, 0, 0, 0], //B, 1
+    [0, 0, 0, 0], //C, 2
+    [0, 0, 0, 0], //D, 3
+] //[0, 1, 2, 3]
+
+const graphI =
+[ //[0, 1, 2, 3]
+    [0, 0, 0, 0], //A, 0
+    [0, 0, 0, 0], //B, 1
+    [0, 0, 0, 0], //C, 2
+    [0, 0, 0, 0], //D, 3
+] //[0, 1, 2, 3]
 
 function allTests() {
     const results = [
@@ -75,7 +106,9 @@ function allTests() {
         are_isomorphic(graphC, graphD) === true,
         are_isomorphic(graphC, graphE) === false,
         are_isomorphic(graphE, graphD) === false,
-        are_isomorphic(graphF, graphG) === true
+        are_isomorphic(graphF, graphG) === true,
+        are_isomorphic(graphN1, graphN2) === true,
+        are_isomorphic(graphH, graphI) === true
     ];
     return results.every(Boolean);
 }

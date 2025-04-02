@@ -107,6 +107,7 @@ function getUnvisitedNeighbors(adjMatrix, node, visited) {
 //end of the tree
 
 function compare_trees(graph1, graph2) {
+    //this function literally just looks to see if the trees i have constructed are exactly the same in structure
     diditwork = true;
     if (diditwork == false){
         return diditwork;
@@ -147,7 +148,7 @@ function are_isomorphic(graph1, graph2) {
     for (var i = 0; i < graph1.length; i++){
         var num_connections1 = 0;
         var num_connections2 = 0;
-        for (var j = 0; j < graph1[i].length; j++){
+        for (var j = 0; j < graph1.length; j++){
             if (graph1[i][j] > 0){
                 num_connections1++;
             }
@@ -160,9 +161,7 @@ function are_isomorphic(graph1, graph2) {
     }
 
     var trees_graph1 = construct_tree(graph1, graph1_node_Queue);
-    //console.log((trees_graph1[0].children[0].children));
     var trees_graph2 = construct_tree(graph2, graph2_node_Queue);
-    //console.log(trees_graph2[0].children[0].children);
     
     return compare_trees(trees_graph1, trees_graph2);;
 }
